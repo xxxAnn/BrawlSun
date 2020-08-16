@@ -1,8 +1,8 @@
 mod brawl_sun;
 
 fn main() {
-	let secret = ""; // Secret token here
+	let secret = "" // Your API token here
 	let client = brawl_sun::client::BrawlClient::new(secret);
-	let brawlers = client.get_brawlers();
-	println!("{}", brawlers.items[0].name)
+	let player = client.get_player("#28CLCJG");
+	println!("{}", player.brawlers[0].name);
 }
