@@ -9,17 +9,6 @@ pub struct BrawlClient {
 
 // Public implementation
 impl BrawlClient {
-	// Factory
-	pub fn new(token: &str) -> BrawlClient {
-		let mut authorization: String = "Bearer ".to_owned();
-		authorization.push_str(token);
-		let client = Client::new();
-		// Construction
-		BrawlClient {
-		token: authorization,
-		web_client: client
-		}
-	}
 	// Requests
 	fn request(&self, url: &str) -> String {
 		let auth: &str = &self.token;
@@ -63,5 +52,17 @@ impl BrawlClient {
 			.expect("Function has panicked");
 
 		return Player::new(v)
+	}
+}
+
+// Factory
+pub fn new(token: &str) -> BrawlClient {
+	let mut authorization: String = "Bearer ".to_owned();
+	authorization.push_str(token);
+	let client = Client::new();
+	// Construction
+	BrawlClient {
+	token: authorization,
+	web_client: client
 	}
 }

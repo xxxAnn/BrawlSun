@@ -1,3 +1,5 @@
 /target
 Cargo.lock
 /.vs/slnx.sqlite
+/.vs/brawl_sun/v16
+/resources/secret.txt
