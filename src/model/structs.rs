@@ -23,13 +23,13 @@ pub struct BrawlerList {
 
 #[derive(Serialize, Deserialize)]
 pub struct Icon {
-	id: u32
+	pub id: u32
 }
 
 #[derive(Serialize, Deserialize)]
 pub struct PlayerClub {
-	tag: String,
-	name: String
+	pub tag: String,
+	pub name: String
 }
 
 #[derive(Serialize, Deserialize)]
@@ -57,5 +57,23 @@ impl Player {
 			brawlers
 		}
 	}
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Members {
+	pub tag: String,
+	pub name: String,
+	pub nameColor: String,
+	pub role: String,
+	pub trophies: u16
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Club {
+	pub name: String,
+	pub tag: String,
+	pub description: String,
+	pub requiredTrophies: u16,
+	pub members: Vec<Members>
 }
 
